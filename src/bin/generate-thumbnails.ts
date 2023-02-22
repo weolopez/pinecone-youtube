@@ -15,7 +15,7 @@ async function main() {
     namespace: process.env.PINECONE_NAMESPACE
   })
 
-  // const videoId = 'RDdjA4yJy88'
+  // const videoId = 'RDdjA4yJy88' || 'PLTnChaVkyH42o9EMhRNQ8P-Y4pJNDHrRB'
   // const timestamps = ['88', '150', '300', '350', '700', '1080']
 
   const playlistId = process.env.YOUTUBE_PLAYLIST_ID

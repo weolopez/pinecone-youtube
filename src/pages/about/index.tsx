@@ -11,25 +11,16 @@ import styles from './styles.module.css'
 const markdownContent = `
 ## Intro
 
-I love the [All-In Podcast](https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg). But search and discovery with podcasts can be really challenging.
+Thank you to [Travis Fischer](https://transitivebullsh.it) https://github.com/transitive-bullshit/yt-semantic-search
 
-I built this project to solve this problem... and I also wanted to play around with cool AI stuff. 😂
+He deserves 100% of the credit here, I modified it minimally to point to another channel.
 
-This project uses the latest models from [OpenAI](https://openai.com/) to build a semantic search index across every episode of the Pod. It allows you to find your favorite moments with Google-level accuracy and rewatch the exact clips you're interested in.
+I updated this project to learn Pinecone in a fun way, it uses the latest models from [OpenAI](https://openai.com/) to build a semantic search index across every episode of the Pod. It allows you to find your favorite moments with Google-level accuracy and rewatch the exact clips you're interested in.
 
-You can use it to power advanced search across _any YouTube channel or playlist_. The demo uses the [All-In Podcast](https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg) because it's my favorite 💕, but it's designed to work with any playlist.
+You can use it to power advanced search across _any YouTube channel or playlist_.
 
 ## Example Queries
-
-- [sweater karen](/?query=sweater+karen)
-- [best advice for founders](/?query=best+advice+for+founders)
-- [poker story from last night](/?query=poker+story+from+last+night)
-- [crypto scam ponzi scheme](/?query=crypto+scam+ponzi+scheme)
-- [luxury sweater chamath](/?query=luxury+sweater+chamath)
-- [phil helmuth](/?query=phil+helmuth)
-- [intellectual honesty](/?query=intellectual+honesty)
-- [sbf ftx](/?query=sbf+ftx)
-- [science corner](/?query=science+corner)
+TBD
 
 ## How It Works
 

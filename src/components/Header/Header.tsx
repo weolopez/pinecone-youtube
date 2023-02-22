@@ -12,9 +12,9 @@ export const Header: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <header className={cs(styles.header, className)}>
       <div className={styles.navHeader}>
-        <Link href='/' className={styles.action} aria-label='Logo'>
+        {/* <Link href='/' className={styles.action} aria-label='Logo'>
           <Logo />
-        </Link>
+        </Link> */}
 
         <div className={styles.rhs}>
           <ActiveLink
