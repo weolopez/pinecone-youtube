@@ -19,7 +19,7 @@ export const githubSponsorsUrl =
 export const copyright = `Copyright 2022 ${author}`
 export const madeWithLove = 'Made with ❤️ in Brooklyn, NY'
 
-export const port = process.env.PORT || '3000'
+export const port = process.env.PORT || '3001'
 export const prodUrl = `https://${domain}`
 export const url = isDev ? `http://localhost:${port}` : prodUrl
 
@@ -32,3 +32,5 @@ export const socialImageUrl = `${url}/social.jpg`
 // ---
 
 export const openaiEmbeddingModel = 'text-embedding-ada-002'
+
+export const openaiCompletionModel = 'text-davinci-003'

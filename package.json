@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start --port 3001",
     "build:server": "tsup",
     "prepare": "husky install",
     "pre-commit": "lint-staged",
