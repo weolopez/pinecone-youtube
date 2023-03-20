@@ -6,6 +6,8 @@ import * as types from '@/server/types'
 import '@/server/config'
 
 async function main() {
+  let query = process.argv[2] ? process.argv[2] : 'explain how gravity works'
+
   const openai = new OpenAIApi(
     new Configuration({
       apiKey: process.env.OPENAI_API_KEY
@@ -18,7 +20,6 @@ async function main() {
     namespace: process.env.PINECONE_NAMESPACE
   })
 
-  const query = 'explain how gravity works'
   const { data: embed } = await openai.createEmbedding({
     input: query,
     model: config.openaiEmbeddingModel
