@@ -125,6 +125,7 @@ Feel free to send me feedback, either on [GitHub](https://github.com/transitive-
 
 - Inspired by [Riley Tomasek's project](https://twitter.com/rileytomasek/status/1603854647575384067) for searching the [Huberman YouTube Channel](https://www.youtube.com/@hubermanlab)
 - Note that this project is not affiliated with the All-In Podcast. It just pulls data from their [YouTube channel](https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg) and processes it using AI.
+- ml5174: The proper way to say it is “I’m changing as little as possible as homage to the people above.” Thanks GPT Bing
 
 ## License
 
