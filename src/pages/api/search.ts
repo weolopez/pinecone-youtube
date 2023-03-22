@@ -82,7 +82,7 @@ export default createAPIHandler<SearchQuery, never, SearchResult[]>(
           return output
         })
 
-      res.setHeader('answer', data)
+      // res.setHeader('answer', data)
 
       searchResults = results.matches.map((result) => {
         const searchResult = pick<Partial<SearchResult>>(
@@ -106,6 +106,8 @@ export default createAPIHandler<SearchQuery, never, SearchResult[]>(
 
         return searchResult as SearchResult
       })
+
+      searchResults[0].answer = data
     }
 
     // add an extra long delay to accentuate any client-side swr cache misses

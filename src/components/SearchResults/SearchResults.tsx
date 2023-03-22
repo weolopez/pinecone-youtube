@@ -34,9 +34,9 @@ export const SearchResults: React.FC = () => {
     if (isEmpty) {
       content = <EmptyResults />
     } else {
-      console.log('\n##########\n')
-      console.log(answerHeader)
-      console.log('\n##########\n')
+      // console.log('\n##########\n')
+      // console.log(answerHeader)
+      // console.log('\n##########\n')
       content = (
         <SearchResultsList
           results={results}

@@ -7,6 +7,7 @@ export type SearchResult = {
   score: number
   matchedHtml: string
   metadata: PineconeCaptionMetadata
+  answer?: string
   // TODO: include offset in url
 }
 

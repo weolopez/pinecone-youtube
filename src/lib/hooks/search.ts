@@ -24,7 +24,7 @@ const fetcher = ({
       limit: body.limit ? `${body.limit}` : undefined
     })}`
   ).then((res) => {
-    answerHeader = res.headers.get('answer')
+    // answerHeader = res.headers.get('answer')
     // console.log('\n##########\n')
     // console.log( answerHeader )
     // console.log('\n##########\n')
@@ -123,6 +123,9 @@ function useSearch() {
   }, [router, debouncedQuery])
 
   const isEmpty = results && !results.length
+  if (!isEmpty) {
+    if (results) answerHeader = results[0].answer
+  }
 
   return {
     results,
