@@ -9,6 +9,8 @@ import { createContainer } from 'unstated-next'
 
 import * as types from '@/types'
 
+let answerHeader
+
 const fetcher = ({
   url,
   body
@@ -21,7 +23,13 @@ const fetcher = ({
       query: body.query,
       limit: body.limit ? `${body.limit}` : undefined
     })}`
-  ).then((res) => res.json())
+  ).then((res) => {
+    answerHeader = res.headers.get('answer')
+    // console.log('\n##########\n')
+    // console.log( answerHeader )
+    // console.log('\n##########\n')
+    return res.json()
+  })
 
 function useSearch() {
   const router = useRouter()
@@ -120,6 +128,7 @@ function useSearch() {
     results,
 
     query,
+    answerHeader,
     debouncedQuery,
     onChangeQuery,
     onClearQuery,

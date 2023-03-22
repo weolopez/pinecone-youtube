@@ -13,7 +13,7 @@ import socialImage from '@/public/social.jpg'
 import styles from './styles.module.css'
 
 export const SearchResults: React.FC = () => {
-  const { results, debouncedQuery, error, isEmpty, isLoading } =
+  const { results, answerHeader, debouncedQuery, error, isEmpty, isLoading } =
     Search.useContainer()
 
   if (error) {
@@ -34,7 +34,16 @@ export const SearchResults: React.FC = () => {
     if (isEmpty) {
       content = <EmptyResults />
     } else {
-      content = <SearchResultsList results={results} />
+      console.log('\n##########\n')
+      console.log(answerHeader)
+      console.log('\n##########\n')
+      content = (
+        <SearchResultsList
+          results={results}
+          query={debouncedQuery}
+          answerHeader={answerHeader}
+        />
+      )
     }
   }
 

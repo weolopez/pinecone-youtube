@@ -61,6 +61,29 @@ export default createAPIHandler<SearchQuery, never, SearchResult[]>(
         includeValues: false
       })
 
+      const contexts: string[] = results['matches'].map(
+        (x: any) => x['metadata']['text']
+      )
+      const prompt = getPrompt(contexts, input, limit)
+
+      let data: any = await openai
+        .createCompletion({
+          prompt: prompt,
+          model: config.openaiCompletionModel,
+          max_tokens: 1000,
+          temperature: 0.5,
+          n: 1,
+          stream: false,
+          stop: ['\n', 'Answer:']
+        })
+        .then((res) => {
+          let output = res.data.choices[0].text
+          console.log(output)
+          return output
+        })
+
+      res.setHeader('answer', data)
+
       searchResults = results.matches.map((result) => {
         const searchResult = pick<Partial<SearchResult>>(
           result,
@@ -101,3 +124,16 @@ export default createAPIHandler<SearchQuery, never, SearchResult[]>(
     return res.status(200).json(searchResults)
   }
 )
+
+function getPrompt(contexts: string[], query: string, limit: number) {
+  // build our prompt with the retrieved contexts included
+  let prompt: string =
+    'Answer the question based on the context below.\n\nContext:\n'
+  const prompt_end: string = `\n\nQuestion: ${query}\nAnswer:`
+
+  for (let i = 1; i < contexts.length; i++) {
+    prompt += contexts[i]
+  }
+
+  return prompt + prompt_end
+}
